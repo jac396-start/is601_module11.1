@@ -90,6 +90,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # RE-ADDED STEP: Patch requirements.txt temporarily on the runner 
+      # to ensure the fixed version is used during the Docker build, 
+      # overriding any caching or local file discrepancies.
+      - name: Force python-jose upgrade for Docker Build
+        run: sed -i 's/python-jose==3.3.0/python-jose==3.4.0/' requirements.txt  
+
       - name: Build image
         run: docker build -t app:test .
 
