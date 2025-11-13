@@ -8,7 +8,7 @@ from contextlib import contextmanager
 
 import pytest
 import requests
-from Faker import Faker
+from faker import Faker
 from playwright.sync_api import sync_playwright, Browser, Page
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import Session, sessionmaker
