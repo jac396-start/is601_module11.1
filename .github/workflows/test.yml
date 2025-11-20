@@ -117,13 +117,13 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
+        
       - uses: docker/build-push-action@v5
         with:
           push: true
           tags: |
-            jcrawford169/is601_module10.1:latest
-            jcrawford169/is601_module10.1:${{ github.sha }}
+            jcrawford169/module11:latest
+            jcrawford169/module11:${{ github.sha }}
           platforms: linux/amd64,linux/arm64
-          cache-from: type=registry,ref=jcrawford169/is601_module10.1:cache
+          cache-from: type=registry,ref=jcrawford169/module11:cache
           cache-to: type=inline,mode=max
